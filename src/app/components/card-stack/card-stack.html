@@ -1,7 +1,7 @@
 <div class="card-stack">
   @for (card of cards; track $index) {
     <div class="single-card">
-      <app-play-card [card]="card"></app-play-card>
+      <app-play-card [isFaceUp]="isFaceUp" [card]="card"></app-play-card>
     </div>
   }
 </div>

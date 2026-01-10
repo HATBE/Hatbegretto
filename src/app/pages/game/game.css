@@ -1,29 +1,31 @@
-* {
-  font-family: 'Roboto', sans-serif;
-  box-sizing: border-box;
+.header {
+  height: 50px;
 }
 
-.header {
-  width: 100dvw;
-  height: 50px;
-
+.header,
+.playarea,
+.cards {
+  width: 100%;
 }
 
 .playarea {
-  border-bottom: white 1px solid;
-  width: 100dvw;
+  border-bottom: 1px solid white;
   height: calc(100dvh - 300px);
 }
 
 .cards {
-  width: 100dvw;
-  height: 250px;
-  padding: 10px;
+  margin: 20px;
   display: flex;
-  justify-content: space-between;
 }
 
-.deck {
+.cards .hand {
+  position: relative;
+  width: 200px;
+}
+
+.cards .deck {
+  position: relative;
   display: flex;
   gap: 60px;
+  flex: 1 1 auto
 }
