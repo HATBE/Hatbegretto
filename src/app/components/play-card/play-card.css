@@ -1,0 +1,84 @@
+.card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  aspect-ratio: 1/1.4;
+  background-color: white;
+  width: 150px;
+  border-radius: .75rem;
+  position: relative;
+  border: 1px black solid;
+}
+
+.number {
+  text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+  font-size: 4rem;
+}
+
+.flip {
+  transform: rotate(180deg);
+}
+
+.spacer {
+  width: 100px;
+  height: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
+  background-color: white;
+  box-shadow:
+    0 1px 0 #cccccc,
+    0 2px 0 #c9c9c9,
+    0 3px 0 #bbbbbb,
+    0 4px 0 #b9b9b9,
+    0 5px 0 #aaaaaa,
+    0 6px 1px rgba(0,0,0,.1),
+    0 0 5px rgba(0,0,0,.1),
+    0 1px 3px rgba(0,0,0,.3),
+    0 3px 5px rgba(0,0,0,.2),
+    0 5px 10px rgba(0,0,0,.25),
+    0 10px 10px rgba(0,0,0,.2),
+    0 20px 20px rgba(0,0,0,.15);
+}
+
+.card-red {
+  background-color: red;
+}
+
+.card-red .number {
+}
+
+.card-blue {
+  background-color: blue;
+}
+
+.card-blue .number {
+}
+
+.card-green {
+  background-color: green;
+}
+
+.card-green .number {
+}
+
+.card-yellow {
+  background-color: yellow;
+}
+
+.card-yellow .number {
+}
+
+.bubble {
+  position: absolute;
+  border-color: white;
+}
+
+.bubble:nth-child(1) {
+  top: 10px;
+  left: 10px;
+  background-color: green;
+}

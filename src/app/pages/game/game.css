@@ -1,0 +1,22 @@
+* {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+.header {
+  width: 100dvw;
+  height: 50px;
+
+}
+
+.playarea {
+  border-bottom: white 1px solid;
+  width: 100dvw;
+  height: calc(100dvh - 300px);
+}
+
+.hand {
+  width: 100dvw;
+  height: 250px;
+  padding: 10px;
+}
