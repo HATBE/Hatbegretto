@@ -8,12 +8,15 @@
   width: 150px;
   border-radius: .75rem;
   position: relative;
-  border: 1px black solid;
+  border: 1px white solid;
+  user-select: none;
 }
 
 .number {
   text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
   font-size: 4rem;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.2);
+
 }
 
 .flip {
@@ -26,9 +29,10 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotate(-10deg);
   border-radius: 1rem;
   background-color: white;
+  transform-origin: center;
   box-shadow:
     0 1px 0 #cccccc,
     0 2px 0 #c9c9c9,
@@ -45,28 +49,28 @@
 }
 
 .card-red {
-  background-color: red;
+  background-color: #F54927;
 }
 
 .card-red .number {
 }
 
 .card-blue {
-  background-color: blue;
+  background-color: #276CF5;
 }
 
 .card-blue .number {
 }
 
 .card-green {
-  background-color: green;
+  background-color: #6CF527;
 }
 
 .card-green .number {
 }
 
 .card-yellow {
-  background-color: yellow;
+  background-color: #FFFF33;
 }
 
 .card-yellow .number {
@@ -74,11 +78,42 @@
 
 .bubble {
   position: absolute;
-  border-color: white;
+  border: 1px solid white;
+  width: 10px;
+  height: 10px;
+  z-index: 100;
+  border-radius: 50%;
 }
 
-.bubble:nth-child(1) {
-  top: 10px;
-  left: 10px;
-  background-color: green;
+.card > .bubble:nth-child(4) {
+  top: 70px;
+  left: 20px;
+  width: 15px;
+  height: 15px;
+  background-color: blue;
 }
+
+.card > .bubble:nth-child(5) {
+  top: 30px;
+  right: 30px;
+  background: yellow;
+}
+
+.card > .bubble:nth-child(6) {
+  bottom: 30px;
+  right: 25px;
+  background: red;
+}
+
+.card > .bubble:nth-child(7) {
+  bottom: 60px;
+  left: 20px;
+  background: green;
+}
+
+.card > .bubble:nth-child(8) {
+  top: 20px;
+  left: 40px;
+  background: green;
+}
+
