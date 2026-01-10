@@ -1,0 +1,26 @@
+.card-stack {
+  position: relative;
+}
+
+.single-card {
+  position: absolute;
+}
+
+.single-card:nth-last-child(1) {
+  transform: rotate(0deg);
+}
+
+.single-card:nth-last-child(2) {
+  transform: rotate(4deg);
+}
+
+.single-card:nth-last-child(3) {
+  transform: rotate(8deg);
+}
+
+.single-card:nth-last-child(4) {
+  transform: rotate(10deg);
+}
+
+
+
