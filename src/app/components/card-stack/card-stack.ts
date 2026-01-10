@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import {PlayCard} from '../play-card/play-card';
 
 @Component({
-  selector: 'app-hand',
+  selector: 'app-card-stack',
   imports: [PlayCard],
-  templateUrl: './hand.html',
-  styleUrl: './hand.css',
+  templateUrl: './card-stack.html',
+  styleUrl: './card-stack.css',
 })
-export class Hand {
+export class CardStack {
 
 }

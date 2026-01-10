@@ -1,0 +1,62 @@
+.card {
+  height: calc(100% - 14px);
+  width: calc(100% - 14px);
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background-color: black;
+  padding: 7px;
+  position: relative;
+}
+
+.inner {
+  border-radius: 7px;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
+
+.text {
+  transform-origin: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.card-pink {
+  background-color: pink;
+}
+
+.card-pink .text {
+  color: pink;
+}
+
+.card-brown {
+  background-color: brown;
+}
+
+.card-brown .text {
+  color: brown;
+}
+
+.card-grey {
+  background-color: grey;
+}
+
+.card-gray .text {
+   color: brown;
+}
+
+.card-lime {
+  background-color: lime;
+}
+
+
+.card-lime.text {
+   color: brown;
+}
+
+

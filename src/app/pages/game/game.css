@@ -15,8 +15,15 @@
   height: calc(100dvh - 300px);
 }
 
-.hand {
+.cards {
   width: 100dvw;
   height: 250px;
   padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.deck {
+  display: flex;
+  gap: 60px;
 }
