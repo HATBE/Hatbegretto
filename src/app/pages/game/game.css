@@ -1,5 +1,7 @@
-.header {
-  height: 50px;
+main {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
 .header,
@@ -8,23 +10,34 @@
   width: 100%;
 }
 
-.playarea {
+
+.header {
+  height: 50px;
+  flex: 0 0 50px;
   border-bottom: 1px solid white;
-  height: calc(100dvh - 300px);
+}
+
+
+.playarea {
+  flex: 1 1 auto;
+  min-height: 0;
+  border-bottom: 1px solid white;
 }
 
 .cards {
   margin: 20px;
   display: flex;
+  height: 290px;
+  flex: 0 0 250px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .cards .hand {
-  position: relative;
   width: 200px;
 }
 
 .cards .deck {
-  position: relative;
   display: flex;
   gap: 60px;
   flex: 1 1 auto

@@ -1,19 +1,21 @@
-<div class="header">
-  <app-header></app-header>
-</div>
-<div class="playarea">
-  <app-playarea></app-playarea>
-</div>
-<div class="cards">
-  <div class="deck">
-    <div>
-      <app-card-row></app-card-row>
+<main>
+  <div class="header">
+    <app-header></app-header>
+  </div>
+  <div class="playarea">
+    <app-playarea></app-playarea>
+  </div>
+  <div class="cards">
+    <div class="deck">
+      <div>
+        <app-card-row></app-card-row>
+      </div>
+      <div>
+        <app-card-stack [cards]="stackCards"></app-card-stack>
+      </div>
     </div>
-    <div>
-      <app-card-stack [cards]="stackCards"></app-card-stack>
+    <div class="hand">
+      <app-card-stack [isFaceUp]="false" [cards]="stackCards"></app-card-stack>
     </div>
   </div>
-  <div class="hand">
-    <app-card-stack [isFaceUp]="false" [cards]="stackCards"></app-card-stack>
-  </div>
-</div>
+</main>

@@ -1,7 +1,7 @@
 .card {
-  height: calc(100% - 14px);
-  width: calc(100% - 14px);
-    display: flex;
+  height: 100%;
+  width: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
