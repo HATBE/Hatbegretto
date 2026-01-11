@@ -1,5 +1,5 @@
 <div class="hand">
-  <app-play-card cdkDrag appZIndexOnCardDrag [card]="{number: 1, rearColor: 'brown', frontColor: 'red'}"></app-play-card>
-  <app-play-card cdkDrag appZIndexOnCardDrag [card]="{number: 2, rearColor: 'brown', frontColor: 'yellow'}"></app-play-card>
-  <app-play-card cdkDrag appZIndexOnCardDrag [card]="{number: 7, rearColor: 'brown', frontColor: 'green'}"></app-play-card>
+  @for (card of cards; track $index) {
+    <app-play-card cdkDrag appZIndexOnCardDrag [card]="card"></app-play-card>
+  }
 </div>

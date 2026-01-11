@@ -6,4 +6,5 @@
   border: 1px white solid;
   user-select: none;
   overflow: hidden;
+  cursor: grab;
 }

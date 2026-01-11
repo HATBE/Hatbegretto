@@ -8,14 +8,14 @@
   <div class="cards">
     <div class="deck">
       <div class="row">
-        <app-card-row></app-card-row>
+        <app-card-row [cards]="rowCards"></app-card-row>
       </div>
       <div class="stack">
-        <app-card-stack [cards]="stackCards"></app-card-stack>
+        <app-card-stack [inputCards]="stackCards" [isFaceUp]="true"></app-card-stack>
       </div>
     </div>
     <div class="hand">
-      <app-card-stack [showTopCard]="true" [isFaceUp]="false" [cards]="stackCards"></app-card-stack>
+      <app-card-stack [showTopCard]="false" [isFaceUp]="false" [inputCards]="handCards"></app-card-stack>
     </div>
   </div>
 </main>

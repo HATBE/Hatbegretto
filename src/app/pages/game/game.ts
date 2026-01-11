@@ -12,6 +12,12 @@ import {Card} from '../../types/card.type';
   styleUrl: './game.css',
 })
 export class Game {
+  protected rowCards: Card[] = [
+    {number: 1, rearColor: 'brown', frontColor: 'red'},
+    {number: 3, rearColor: 'brown', frontColor: 'yellow'},
+    {number: 8, rearColor: 'brown', frontColor: 'blue'}
+  ]
+
   protected stackCards: Card[] = [
     {number: 4, rearColor: 'brown', frontColor: 'yellow'},
     {number: 2, rearColor: 'brown', frontColor: 'blue'},
@@ -21,6 +27,19 @@ export class Game {
     {number: 6, rearColor: 'brown', frontColor: 'yellow'},
     {number: 4, rearColor: 'brown', frontColor: 'red'},
     {number: 7, rearColor: 'brown', frontColor: 'green'},
+    {number: 8, rearColor: 'brown', frontColor: 'red'},
+    {number: 9, rearColor: 'brown', frontColor: 'yellow'},
+  ];
+
+  protected handCards: Card[] = [
+    {number: 7, rearColor: 'brown', frontColor: 'green'},
+    {number: 4, rearColor: 'brown', frontColor: 'yellow'},
+    {number: 2, rearColor: 'brown', frontColor: 'blue'},
+    {number: 7, rearColor: 'brown', frontColor: 'yellow'},
+    {number: 3, rearColor: 'brown', frontColor: 'red'},
+    {number: 1, rearColor: 'brown', frontColor: 'green'},
+    {number: 6, rearColor: 'brown', frontColor: 'yellow'},
+    {number: 4, rearColor: 'brown', frontColor: 'red'},
     {number: 8, rearColor: 'brown', frontColor: 'red'},
     {number: 9, rearColor: 'brown', frontColor: 'yellow'},
   ];

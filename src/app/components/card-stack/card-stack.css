@@ -24,13 +24,7 @@
   transform: rotate(10deg);
 }
 
-.card-stack .single-card {
-  pointer-events: none;
-}
-
 .card-stack .single-card:last-child {
   pointer-events: auto;
 }
-
-
 
