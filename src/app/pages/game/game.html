@@ -7,15 +7,15 @@
   </div>
   <div class="cards">
     <div class="deck">
-      <div>
+      <div class="row">
         <app-card-row></app-card-row>
       </div>
-      <div>
+      <div class="stack">
         <app-card-stack [cards]="stackCards"></app-card-stack>
       </div>
     </div>
     <div class="hand">
-      <app-card-stack [isFaceUp]="false" [cards]="stackCards"></app-card-stack>
+      <app-card-stack [showTopCard]="false" [isFaceUp]="false" [cards]="stackCards"></app-card-stack>
     </div>
   </div>
 </main>

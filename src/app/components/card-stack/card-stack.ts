@@ -11,4 +11,5 @@ import {Card} from '../../types/card.type';
 export class CardStack {
   @Input() cards!: Card[];
   @Input() isFaceUp= true;
+  @Input() showTopCard= false;
 }

@@ -1,5 +1,7 @@
 .card-stack {
   position: relative;
+  width: 160px;
+  height: 224px !important;
 }
 
 .single-card {

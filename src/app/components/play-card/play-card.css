@@ -1,6 +1,6 @@
 .card-wrapper {
   width: 160px;
-  aspect-ratio: 1/1.4;
+  height: 224px;
   background-color: white;
   border-radius: .75rem;
   border: 1px white solid;
