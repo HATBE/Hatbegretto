@@ -1,11 +1,15 @@
 <div class="card-stack">
   @for (card of cards; track $index) {
-    <div class="single-card">
-      @if($index === 9 && showTopCard) {
-        <app-play-card [isFaceUp]="true" [card]="card"></app-play-card>
-      } @else {
-        <app-play-card [isFaceUp]="isFaceUp" [card]="card"></app-play-card>
-      }
+    <div
+      class="single-card"
+      cdkDrag
+      [cdkDragDisabled]="!($index === cards.length - 1 && (isFaceUp || showTopCard))"
+      appZIndexOnCardDrag
+    >
+      <app-play-card
+        [isFaceUp]="(isFaceUp || showTopCard) && $index === cards.length - 1"
+        [card]="card"
+      ></app-play-card>
     </div>
   }
 </div>
