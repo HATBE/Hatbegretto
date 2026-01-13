@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import {CardStack} from '../types/card-stack.type';
 import {Card} from '../types/card.type';
+import {Player} from '../types/player.type';
+import {CardRearColor} from '../types/card-rear-color.type';
 
 const FRONT_COLORS = ['red', 'blue', 'green', 'yellow'] as const;
 const REAR_COLORS  = ['pink', 'brown', 'grey', 'lime'] as const;
@@ -9,55 +11,75 @@ const REAR_COLORS  = ['pink', 'brown', 'grey', 'lime'] as const;
     providedIn: 'root',
 })
 export default class HatbegrettoService {
-    private deck: Card[] = [];
-
+    private players: Player[] = [];
     private playareaCards: CardStack[] = [];
-    private rowCards: Card[] = [];
-    private stackCards: Card[] = [];
-    private handCards: Card[] = [];
+
+    private initDeck: Card[] = [];
 
     public resetGame() {
+      this.players = [];
+      this.playareaCards = [];
 
-        this.createGameCards();
+      this.initDeck = this.createInitialDeck();
+
+      this.players = [this.createPlayer('pink'), this.createPlayer('brown'), this.createPlayer('grey'), this.createPlayer('lime')]
     }
 
-    shuffle<T>(array: T[]): T[] {
-        const result = [...array];
+    private createPlayer(color: CardRearColor): Player {
+      let playersDeck = this.shuffle(this.initDeck.filter(card => card.rearColor === color));
 
-        for (let i = result.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [result[i], result[j]] = [result[j], result[i]];
-        }
+      const row = playersDeck.splice(0, 3);
+      const stack = playersDeck.splice(0, 10);
+      const hand = playersDeck.splice(0);
 
-        return result;
+      return {
+        color,
+        row: row,
+        stack: stack,
+        hand: hand,
+      }
     }
 
-    private createGameCards() {
-        this.resetCards();
+    private shuffle(cards: Card[]): Card[] {
+      const copy = [...cards];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    private createInitialDeck(): Card[] {
         const deck: Card[] = [];
 
-        for (const frontColor of FRONT_COLORS) {
-            for (let number = 1; number <= 10; number++) {
-                for (let i = 0; i < 4; i++) {
-                    deck.push({
-                        number,
-                        frontColor,
-                        rearColor: REAR_COLORS[i % REAR_COLORS.length],
-                    });
-                }
+        for (let i = 0; i < 4; i++) {
+          const rearColor = REAR_COLORS[i];
+
+          for(let j = 1; j <= 10; j++) {
+            for(let k = 0; k < 4; k++) {
+              const frontColor = FRONT_COLORS[k];
+              deck.push({number: j, rearColor, frontColor});
             }
+          }
         }
 
-        console.log(deck);
-
-        this.deck = deck;
+        return deck;
     }
 
-    private resetCards() {
-        this.deck = [];
-        this.playareaCards = [];
-        this.rowCards = [];
-        this.stackCards = [];
-        this.handCards = [];
+    public getRow(): Card[] {
+      return this.players.find(player => player.color === 'lime')!.row;
     }
+
+    public getStack(): Card[]  {
+      return this.players.find(player => player.color === 'lime')!.stack;
+    }
+
+    public getHand(): Card[]  {
+      return this.players.find(player => player.color === 'lime')!.hand;
+    }
+
+    public getPlayareaCards(): CardStack[]  {
+      return this.playareaCards;
+    }
+
 }

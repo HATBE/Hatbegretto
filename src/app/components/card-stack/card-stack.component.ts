@@ -8,10 +8,10 @@ import {NgClass} from '@angular/common';
 @Component({
   selector: 'app-card-stack',
   imports: [PlayCard, DragDropModule, CdkDrag, ZIndexOnCardDragDirective, NgClass],
-  templateUrl: './card-stack.html',
-  styleUrl: './card-stack.css',
+  templateUrl: './card-stack.component.html',
+  styleUrl: './card-stack.component.css',
 })
-export class CardStack implements OnChanges {
+export class CardStackComponent implements OnChanges {
   @Input() inputCards!: Card[];
   @Input() isFaceUp= true;
   @Input() showTopCard= false;

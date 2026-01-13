@@ -1,46 +1,32 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Header} from '../../components/header/header';
-import {CardStack} from '../../components/card-stack/card-stack';
+import {CardStackComponent} from '../../components/card-stack/card-stack.component';
 import {CardRow} from '../../components/card-row/card-row';
 import {Playarea} from '../../components/playarea/playarea';
 import {Card} from '../../types/card.type';
+import HatbegrettoService from '../../services/hatbegretto.service';
+import {CardStack} from '../../types/card-stack.type';
 
 @Component({
   selector: 'app-game',
-  imports: [CardStack, CardRow, Playarea, Header],
+  imports: [CardStackComponent, CardRow, Playarea, Header],
   templateUrl: './game.html',
   styleUrl: './game.css',
 })
-export class Game {
-  protected rowCards: Card[] = [
-    {number: 1, rearColor: 'brown', frontColor: 'red'},
-    {number: 3, rearColor: 'brown', frontColor: 'yellow'},
-    {number: 8, rearColor: 'brown', frontColor: 'blue'}
-  ]
+export class Game implements OnInit {
+  protected rowCards: Card[] = [];
+  protected stackCards: Card[] = [];
+  protected handCards: Card[] = [];
+  protected playareaCards: CardStack[] = [];
 
-  protected stackCards: Card[] = [
-    {number: 4, rearColor: 'brown', frontColor: 'yellow'},
-    {number: 2, rearColor: 'brown', frontColor: 'blue'},
-    {number: 7, rearColor: 'brown', frontColor: 'yellow'},
-    {number: 3, rearColor: 'brown', frontColor: 'red'},
-    {number: 1, rearColor: 'brown', frontColor: 'green'},
-    {number: 6, rearColor: 'brown', frontColor: 'yellow'},
-    {number: 4, rearColor: 'brown', frontColor: 'red'},
-    {number: 7, rearColor: 'brown', frontColor: 'green'},
-    {number: 8, rearColor: 'brown', frontColor: 'red'},
-    {number: 9, rearColor: 'brown', frontColor: 'yellow'},
-  ];
+  public constructor(private hatbegrettoService: HatbegrettoService) {}
 
-  protected handCards: Card[] = [
-    {number: 7, rearColor: 'brown', frontColor: 'green'},
-    {number: 4, rearColor: 'brown', frontColor: 'yellow'},
-    {number: 2, rearColor: 'brown', frontColor: 'blue'},
-    {number: 7, rearColor: 'brown', frontColor: 'yellow'},
-    {number: 3, rearColor: 'brown', frontColor: 'red'},
-    {number: 1, rearColor: 'brown', frontColor: 'green'},
-    {number: 6, rearColor: 'brown', frontColor: 'yellow'},
-    {number: 4, rearColor: 'brown', frontColor: 'red'},
-    {number: 8, rearColor: 'brown', frontColor: 'red'},
-    {number: 9, rearColor: 'brown', frontColor: 'yellow'},
-  ];
+  ngOnInit() {
+    this.hatbegrettoService.resetGame()
+
+    this.rowCards = this.hatbegrettoService.getRow();
+    this.stackCards = this.hatbegrettoService.getStack();
+    this.handCards = this.hatbegrettoService.getHand();
+    this.playareaCards = this.hatbegrettoService.getPlayareaCards();
+  }
 }

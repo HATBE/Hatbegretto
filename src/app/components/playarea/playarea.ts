@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {CardStack} from '../card-stack/card-stack';
+import {CardStackComponent} from '../card-stack/card-stack.component';
 
 @Component({
   selector: 'app-playarea',
@@ -8,5 +8,5 @@ import {CardStack} from '../card-stack/card-stack';
   styleUrl: './playarea.css',
 })
 export class Playarea {
-  @Input() cardStacks!: CardStack[];
+  @Input() cardStacks!: CardStackComponent[];
 }
