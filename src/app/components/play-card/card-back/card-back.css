@@ -54,6 +54,6 @@
   background-color: lime;
 }
 
-.card-lime.text {
-   color: brown;
+.card-lime .text {
+   color: lime;
 }

@@ -1,0 +1,13 @@
+<div class="menu">
+  <div class="deck">
+    <div class="row">
+      <app-card-row [cards]="rowCards"></app-card-row>
+    </div>
+    <div class="stack">
+      <app-card-stack [topCardDraggable]="false" [inputCards]="stackCards" [isFaceUp]="true"></app-card-stack>
+    </div>
+  </div>
+  <div class="hand">
+    <app-card-stack [showTopCard]="false" [isFaceUp]="false" [inputCards]="handCards"></app-card-stack>
+  </div>
+</div>

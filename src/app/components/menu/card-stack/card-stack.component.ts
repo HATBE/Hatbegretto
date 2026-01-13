@@ -1,13 +1,12 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
-import {PlayCard} from '../play-card/play-card';
-import {Card} from '../../types/card.type';
 import {CdkDrag, DragDropModule} from '@angular/cdk/drag-drop';
-import ZIndexOnCardDragDirective from '../../directives/ZIndexOnCardDrag.directive';
-import {NgClass} from '@angular/common';
+import {Card} from '../../../types/card.type';
+import ZIndexOnCardDragDirective from '../../../directives/ZIndexOnCardDrag.directive';
+import {PlayCard} from '../../play-card/play-card';
 
 @Component({
   selector: 'app-card-stack',
-  imports: [PlayCard, DragDropModule, CdkDrag, ZIndexOnCardDragDirective, NgClass],
+  imports: [PlayCard, DragDropModule, CdkDrag, ZIndexOnCardDragDirective],
   templateUrl: './card-stack.component.html',
   styleUrl: './card-stack.component.css',
 })

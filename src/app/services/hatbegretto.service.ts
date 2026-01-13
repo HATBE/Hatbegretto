@@ -1,8 +1,9 @@
 import {Injectable} from '@angular/core';
-import {CardStack} from '../types/card-stack.type';
+import {CardStack, PlayAreaCardStack} from '../types/playarea-card-stack.type';
 import {Card} from '../types/card.type';
 import {Player} from '../types/player.type';
 import {CardRearColor} from '../types/card-rear-color.type';
+import { Point } from '@angular/cdk/drag-drop';
 
 const FRONT_COLORS = ['red', 'blue', 'green', 'yellow'] as const;
 const REAR_COLORS  = ['pink', 'brown', 'grey', 'lime'] as const;
@@ -82,4 +83,44 @@ export default class HatbegrettoService {
       return this.playareaCards;
     }
 
+    public getPlayers(): Player[] {
+      return this.players;
+    }
+
+    public getPlayer(color: CardRearColor): Player {
+      return this.players.find(player => player.color === color)!;
+    }
+
+
+    public findPlayareaCardStackById(id: string): PlayAreaCardStack | undefined {
+      return this.playareaCards.find((i) => i.localId === id);
+    }
+
+    public updatePlayareaCardStackPosition(id: string, position: Point): void {
+      this.playareaCards = this.playareaCards.map((cardStack) =>
+        cardStack.localId === id ? { ...cardStack, x: position.x, y: position.y } : cardStack
+      );
+
+      //this.savePlaygroundCards(this.playgroundCards);
+    }
+
+    public createPlayAreaCardStack(
+      id: string,
+      cards: Card[],
+      x: number,
+      y: number,
+    ): PlayAreaCardStack {
+      const cardStack = {
+        cards,
+        localId: crypto.randomUUID(),
+        x,
+        y,
+      };
+
+      this.playareaCards.push(cardStack);
+
+      //this.savePlaygroundCards(this.playgroundCards);
+
+      return cardStack;
+    }
 }

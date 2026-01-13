@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {CardStackComponent} from '../card-stack/card-stack.component';
+import {CardStackComponent} from '../menu/card-stack/card-stack.component';
 
 @Component({
   selector: 'app-playarea',

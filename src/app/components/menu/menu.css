@@ -1,0 +1,58 @@
+.menu {
+  display: flex;
+  height: auto;
+  flex: 0 0 250px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.menu .row {
+  border: 2px solid white;
+  padding: 30px 20px 20px 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.menu .row::after {
+  content: "ROW";
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+}
+
+.menu .stack {
+  position: relative;
+  border: 2px solid white;
+  padding: 30px 40px 20px 40px;
+  border-radius: 10px;
+}
+
+.menu .stack::after {
+  content: "STACK";
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+}
+
+.menu .deck {
+  display: flex;
+  gap: 20px;
+  flex: 1 1 auto;
+}
+
+.menu .hand {
+  position: relative;
+  border: 2px solid white;
+  padding: 30px 40px 20px 40px;
+  border-radius: 10px;
+}
+
+.menu .hand::after {
+  content: "HAND";
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+}

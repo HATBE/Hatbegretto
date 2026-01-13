@@ -1,0 +1,13 @@
+<div class="hand">
+  @for (card of cards; track $index) {
+    <app-play-card
+      cdkDrag
+      appZIndexOnCardDrag
+      [cdkDragData]="card"
+      (cdkDragEnded)="dragEnded($event)"
+      (cdkDragMoved)="dragMoved($event)"
+      [cdkDragBoundary]="'body'"
+      [card]="card"
+    ></app-play-card>
+  }
+</div>
