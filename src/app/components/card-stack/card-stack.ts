@@ -15,6 +15,7 @@ export class CardStack implements OnChanges {
   @Input() inputCards!: Card[];
   @Input() isFaceUp= true;
   @Input() showTopCard= false;
+  @Input() topCardDraggable = true;
 
   protected cards: Card[] = [];
 

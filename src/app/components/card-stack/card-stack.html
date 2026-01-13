@@ -3,7 +3,7 @@
    <div
      class="single-card"
      cdkDrag
-     [cdkDragDisabled]="!($index === cards.length - 1 && (isFaceUp || showTopCard))"
+     [cdkDragDisabled]="!topCardDraggable || !($index === cards.length - 1 && (isFaceUp || showTopCard))"
      appZIndexOnCardDrag
    >
        <app-play-card

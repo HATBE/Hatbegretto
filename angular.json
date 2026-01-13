@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Ligretto": {
+    "Hatbegretto": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -56,10 +56,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Ligretto:build:production"
+              "buildTarget": "Hatbegretto:build:production"
             },
             "development": {
-              "buildTarget": "Ligretto:build:development"
+              "buildTarget": "Hatbegretto:build:development"
             }
           },
           "defaultConfiguration": "development"
